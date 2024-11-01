@@ -44,10 +44,10 @@ This project uses C++ to simplify essential financial calculations, showing how 
 ## 📋 Team Members
 | Name                                                   | Role                | Class |
 |--------------------------------------------------------|---------------------|-------|
-| [Anton Kabakov](https://github.com/ATKabakov22)   | Front end Developer | 🟩9V   |
-| [Kalina Atanasova](https://github.com/kkatanasova22) | Front end Developer| 🟩9V   |
-| [Kristiyana Hristova](https://github.com/KIHristova22)| Scrum Trainer | 🟩9V   |
-| [Rumen Purvanov](https://github.com/RVParvanov22) | Front end Developer  | 🟩9V   |
+| [Anton Kabakov](https://github.com/ATKabakov22)   | Front end Developer | 🟩10V   |
+| [Kalina Atanasova](https://github.com/kkatanasova22) | Front end Developer| 🟩10V   |
+| [Kristiyana Hristova](https://github.com/KIHristova22)| Scrum Trainer | 🟩10V   |
+| [Rumen Purvanov](https://github.com/RVParvanov22) | Front end Developer  | 🟩10V   |
 
 <hr>
 
