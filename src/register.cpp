@@ -42,7 +42,14 @@ void RegisterForm::on_registerButton_clicked()
     if (validateInputs(username, password, confirmPassword)) {
         ui->statusLabel->setText("Регистрацията е успешна!"); // "Registration successful!"
         ui->statusLabel->setStyleSheet("QLabel { color : green; font-weight: bold; }");
-        // Add logic here to save the user credentials to a database or file
+
+        // Clear the input fields after successful registration
+        ui->usernameLineEdit->clear();
+        ui->passwordLineEdit->clear();
+        ui->confirmPasswordLineEdit->clear();
+
+        // Emit signal to indicate successful registration
+        emit registrationSuccessful(); // Emit the signal
     } else {
         ui->statusLabel->setStyleSheet("QLabel { color : red; font-weight: bold; }");
     }
