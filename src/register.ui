@@ -12,11 +12,27 @@
   </property>
   <property name="styleSheet">
    <string>
-      background-color: #f0f0f0; /* Light background */
+      background-color: #f9f9f9; /* Soft background color */
       border-radius: 10px; /* Rounded corners for the form */
+      padding: 20px; /* Add padding to the entire form */
    </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="styleSheet">
+      <string>
+         font-size: 24px; /* Larger title font */
+         font-weight: bold; /* Bold font for title */
+         color: #333; /* Darker text for contrast */
+         padding: 10px; /* Padding around the title */
+      </string>
+     </property>
+     <property name="text">
+      <string>Registration</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QLineEdit" name="usernameLineEdit">
      <property name="styleSheet">
@@ -28,11 +44,8 @@
          }
       </string>
      </property>
-     <property name="text">
-      <string/>
-     </property>
      <property name="placeholderText">
-      <string>Потребителското име</string>
+      <string>Username</string>
      </property>
     </widget>
    </item>
@@ -51,7 +64,7 @@
       <enum>QLineEdit::EchoMode::Password</enum>
      </property>
      <property name="placeholderText">
-      <string>Парола</string>
+      <string>Password</string>
      </property>
     </widget>
    </item>
@@ -70,7 +83,7 @@
       <enum>QLineEdit::EchoMode::Password</enum>
      </property>
      <property name="placeholderText">
-      <string>Потвърдете паролата</string>
+      <string>Confirm Password</string>
      </property>
     </widget>
    </item>
@@ -84,6 +97,7 @@
             border-radius: 5px; /* Rounded corners */
             padding: 10px; /* Padding for button */
             font-weight: bold; /* Bold text */
+            font-size: 16px; /* Slightly larger font size */
          }
          QPushButton:hover {
             background-color: #0056b3; /* Darker blue on hover */
@@ -91,7 +105,7 @@
       </string>
      </property>
      <property name="text">
-      <string>Регистрация</string>
+      <string>Register</string>
      </property>
     </widget>
    </item>
@@ -102,6 +116,7 @@
          QLabel {
             font-size: 14px; /* Font size for label */
             padding: 10px; /* Padding for label */
+            color: #e74c3c; /* Error color */
          }
       </string>
      </property>
