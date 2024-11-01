@@ -15,8 +15,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(stackedWidget);
 
     connect(registerPage, &RegisterForm::registrationSuccessful, this, &MainWindow::showLogin);
-    connect(registerPage->buttonToLogin, &QPushButton::clicked, this, &MainWindow::showLogin);
-    connect(loginPage->buttonToRegister, &QPushButton::clicked, this, &MainWindow::showRegister);
 }
 
 MainWindow::~MainWindow() {}
