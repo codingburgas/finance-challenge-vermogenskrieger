@@ -10,15 +10,21 @@ CONFIG += c++17
 
 SOURCES += \
     financemanager.cpp \
+    login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    register.cpp
 
 HEADERS += \
     financemanager.h \
-    mainwindow.h
+    login.h \
+    mainwindow.h \
+    register.h
 
 FORMS += \
-    mainwindow.ui
+    login.ui \
+    mainwindow.ui \
+    register.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
