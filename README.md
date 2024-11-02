@@ -18,9 +18,11 @@ This project uses C++ to simplify essential financial calculations, showing how 
 ## 🛠️ Languages & Tools
 ### IDE and collaborative service
 <p align="left">
-    <a href="https://github.com/"><img src="./images/git-hub.png" alt="GitHub logo" width="75px" /></a>
-    <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="./images/word.png" alt="MS Word logo" width="48px" /></a>
-    <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="./images/power-point.png" alt="MS PowerPoint logo" width="80px" /></a>
+    <a href="https://github.com/"><img src="./images/git-hub.png" alt="GitHub logo" width="80px" /></a>
+    <a href="https://www.microsoft.com/en-ww/microsoft-365/word"><img src="./images/word.png" alt="MS Word logo" width="60px" /></a>
+    <a href="https://www.microsoft.com/en-us/microsoft-365/powerpoint"><img src="./images/power-point.png" alt="MS PowerPoint logo" width="85px" /></a>
+    <a href="https://www.qt.io/"><img src="./images/qt.png" alt="MS PowerPoint logo" width="100px" /></a>
+
 </p>
 
 ## Documents
@@ -29,7 +31,7 @@ This project uses C++ to simplify essential financial calculations, showing how 
 [Documentation]
 
 ### 🧑‍🏫 Presenting
-[Presentation]
+[Presentation](./doc/Vermogenskrieger.pptx)
 
 <hr> 
 
