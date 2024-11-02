@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,37 +16,34 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="welcomeLabel">
-     <property name="text">
-      <string>Welcome back!</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
      <property name="styleSheet">
       <string>font-size: 20px; font-weight: bold; color: #333;</string>
+     </property>
+     <property name="text">
+      <string>Welcome back!</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLineEdit" name="usernameLineEdit">
-     <property name="placeholderText">
-      <string>Enter your username</string>
-     </property>
      <property name="styleSheet">
       <string>padding: 5px; font-size: 14px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter your username</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLineEdit" name="passwordLineEdit">
-     <property name="placeholderText">
-      <string>Enter your password</string>
+     <property name="styleSheet">
+      <string>padding: 5px; font-size: 14px;</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>
-     <property name="styleSheet">
-      <string>padding: 5px; font-size: 14px;</string>
+     <property name="placeholderText">
+      <string>Enter your password</string>
      </property>
     </widget>
    </item>
@@ -59,24 +56,21 @@
    </item>
    <item>
     <widget class="QPushButton" name="loginButton">
-     <property name="text">
-      <string>Login</string>
-     </property>
      <property name="styleSheet">
       <string>background-color: #58b368; color: white; font-weight: bold; padding: 10px; font-size: 16px; border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>Login</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLabel" name="statusLabel">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
      <property name="styleSheet">
       <string>font-size: 14px;</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>

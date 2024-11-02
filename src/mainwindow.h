@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
-#include "register.h" // Include RegisterForm header
-#include "login.h"    // Include Login header
+#include "ui_MainWindow.h"
+#include "register.h"
+#include "login.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -14,11 +15,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void showRegister();
     void showLogin();
+    void showRegister();
 
 private:
-    QStackedWidget *stackedWidget;
+    Ui::MainWindow *ui;
+    Login *loginPage;
+    RegisterForm *registerPage;
 };
 
 #endif // MAINWINDOW_H

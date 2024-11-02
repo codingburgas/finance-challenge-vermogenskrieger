@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>460</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="styleSheet">
@@ -61,7 +61,7 @@
       </string>
      </property>
      <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
+      <enum>QLineEdit::Normal</enum>
      </property>
      <property name="placeholderText">
       <string>Password</string>
@@ -80,7 +80,7 @@
       </string>
      </property>
      <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
+      <enum>QLineEdit::Normal</enum>
      </property>
      <property name="placeholderText">
       <string>Confirm Password</string>
@@ -122,9 +122,6 @@
      </property>
      <property name="text">
       <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>

@@ -1,28 +1,36 @@
 #include "mainwindow.h"
-#include <QPushButton>
-#include <QVBoxLayout>
+#include "register.h"
+#include "login.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent) {
-    stackedWidget = new QStackedWidget(this);
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
+    ui->setupUi(this);
 
-    RegisterForm *registerPage = new RegisterForm(this);
+    // Create the login and register pages
     Login *loginPage = new Login(this);
+    RegisterForm *registerPage = new RegisterForm(this);
 
-    stackedWidget->addWidget(registerPage);
-    stackedWidget->addWidget(loginPage);
+    // Add pages to the stacked widget
+    ui->stackedWidget->addWidget(loginPage);
+    ui->stackedWidget->addWidget(registerPage);
 
-    setCentralWidget(stackedWidget);
+    // Store pointers for easier access in showLogin and showRegister
+    this->loginPage = loginPage;
+    this->registerPage = registerPage;
 
-    connect(registerPage, &RegisterForm::registrationSuccessful, this, &MainWindow::showLogin);
+    // Connect buttons to their respective slots
+    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::showLogin);
+    connect(ui->registerButton, &QPushButton::clicked, this, &MainWindow::showRegister);
 }
 
-MainWindow::~MainWindow() {}
-
-void MainWindow::showRegister() {
-    stackedWidget->setCurrentWidget(stackedWidget->widget(0)); // Show register page
+MainWindow::~MainWindow() {
+    delete ui;
 }
 
 void MainWindow::showLogin() {
-    stackedWidget->setCurrentWidget(stackedWidget->widget(1)); // Show login page
+    ui->stackedWidget->setCurrentWidget(loginPage); // Show login page
+}
+
+void MainWindow::showRegister() {
+    ui->stackedWidget->setCurrentWidget(registerPage); // Show register page
 }
