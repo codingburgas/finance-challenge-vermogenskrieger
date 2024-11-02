@@ -14,11 +14,12 @@ public:
     explicit RegisterForm(QWidget *parent = nullptr);
     ~RegisterForm();
 
-private slots:
-    void on_registerButton_clicked();
-
 signals:
     void registrationSuccessful(); // Signal for successful registration
+    void loginRequested(); // New signal for login request
+
+private slots:
+    void on_registerButton_clicked();
 
 private:
     bool validateInputs(const QString &username, const QString &password, const QString &confirmPassword);

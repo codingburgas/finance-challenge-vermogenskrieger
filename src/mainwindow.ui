@@ -18,20 +18,6 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget"/>
     </item>
-    <item>
-     <widget class="QPushButton" name="loginButton">
-      <property name="text">
-       <string>Login</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="registerButton">
-      <property name="text">
-       <string>Register</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

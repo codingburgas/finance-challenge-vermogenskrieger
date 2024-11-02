@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1248</width>
-    <height>625</height>
+    <width>620</width>
+    <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,23 +15,17 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="welcomeLabel">
+    <widget class="QLabel" name="loginLabel">
      <property name="text">
-      <string>Welcome back!</string>
+      <string>Login</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QLineEdit" name="usernameLineEdit">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>30</height>
-      </size>
-     </property>
      <property name="placeholderText">
       <string>Enter your username</string>
      </property>
@@ -39,12 +33,6 @@
    </item>
    <item>
     <widget class="QLineEdit" name="passwordLineEdit">
-     <property name="maximumSize">
-      <size>
-       <width>500</width>
-       <height>30</height>
-      </size>
-     </property>
      <property name="echoMode">
       <enum>QLineEdit::EchoMode::Password</enum>
      </property>
@@ -61,9 +49,12 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="registerButton"> <!-- Register Button Added -->
+    <widget class="QPushButton" name="forgotButton">
      <property name="text">
-      <string>Register</string>
+      <string>Forgot username/password?</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

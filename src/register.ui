@@ -19,6 +19,9 @@
      <property name="text">
       <string>Register</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </item>
    <item>
@@ -31,7 +34,7 @@
    <item>
     <widget class="QLineEdit" name="passwordLineEdit">
      <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
+      <enum>QLineEdit::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Enter your password</string>
@@ -41,7 +44,7 @@
    <item>
     <widget class="QLineEdit" name="confirmPasswordLineEdit">
      <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
+      <enum>QLineEdit::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Confirm your password</string>
@@ -52,6 +55,16 @@
     <widget class="QPushButton" name="registerButton">
      <property name="text">
       <string>Register</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="loginLinkButton">
+     <property name="text">
+      <string>Already have an account? Log in</string>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

@@ -11,16 +11,17 @@ RegisterForm::RegisterForm(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->statusLabel->clear();
+
+    // Connect the login link button to emit the loginRequested signal
+    connect(ui->loginLinkButton, &QPushButton::clicked, this, &RegisterForm::loginRequested);
 }
 
-RegisterForm::~RegisterForm()
-{
+RegisterForm::~RegisterForm() {
     delete ui;
 }
 
-// Validate inputs
-bool RegisterForm::validateInputs(const QString &username, const QString &password, const QString &confirmPassword)
-{
+// Validate user inputs
+bool RegisterForm::validateInputs(const QString &username, const QString &password, const QString &confirmPassword) {
     if (username.isEmpty()) {
         ui->statusLabel->setText("Username is required.");
         return false;

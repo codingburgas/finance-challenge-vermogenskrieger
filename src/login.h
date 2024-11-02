@@ -7,8 +7,6 @@ namespace Ui {
 class Login;
 }
 
-class RegisterForm; // Forward declaration of RegisterForm
-
 class Login : public QWidget
 {
     Q_OBJECT
@@ -19,10 +17,11 @@ public:
 
 private slots:
     void on_loginButton_clicked();
-    void showRegisterForm(); // Declare the showRegisterForm method
+    void on_forgotButton_clicked(); // Slot for forgot password button
 
 signals:
-    void loginSuccessful(); // Emit when login is successful
+    void loginSuccessful();
+    void showRegisterRequested(); // Signal to request showing the register page
 
 private:
     Ui::Login *ui;

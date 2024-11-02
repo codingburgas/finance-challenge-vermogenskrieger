@@ -1,10 +1,9 @@
 #include "login.h"
 #include "ui_login.h"
+#include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
 #include <QCryptographicHash>
-#include <QMessageBox>
-#include "register.h"
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
@@ -14,20 +13,19 @@ Login::Login(QWidget *parent) :
     ui->setupUi(this);
     ui->statusLabel->clear();
 
-    // Connect the register button to the showRegisterForm function
-    connect(ui->registerButton, &QPushButton::clicked, this, &Login::showRegisterForm);
+    // Connect the forgot password button to its slot
+    connect(ui->forgotButton, &QPushButton::clicked, this, &Login::on_forgotButton_clicked);
 }
 
-Login::~Login()
-{
-    delete ui;  // Clean up the UI
+Login::~Login() {
+    delete ui;
 }
 
 bool Login::verifyCredentials(const QString &username, const QString &password) {
     QFile file("users.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "Unable to open user data file.");
-        return false;  // Unable to open file
+        return false;
     }
 
     QByteArray hashedPassword = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256).toHex();
@@ -40,14 +38,12 @@ bool Login::verifyCredentials(const QString &username, const QString &password) 
             QString storedUsername = credentials[0];
             QString storedPasswordHash = credentials[1];
 
-            // Check if username and password match
             if (storedUsername == username && storedPasswordHash == hashedPassword) {
-                return true;  // Valid credentials
+                return true;
             }
         }
     }
-
-    return false;  // No match found
+    return false;
 }
 
 void Login::on_loginButton_clicked() {
@@ -73,7 +69,6 @@ void Login::on_loginButton_clicked() {
     }
 }
 
-void Login::showRegisterForm() {
-    RegisterForm *registerForm = new RegisterForm(this);
-    registerForm->show();
+void Login::on_forgotButton_clicked() {
+    emit showRegisterRequested(); // Emit signal to request the register page
 }

@@ -3,9 +3,12 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
-#include "ui_MainWindow.h"
-#include "register.h"
 #include "login.h"
+#include "register.h"
+
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -17,6 +20,7 @@ public:
 private slots:
     void showLogin();
     void showRegister();
+    void showLoginFromRegister(); // Ensure this line exists
 
 private:
     Ui::MainWindow *ui;
