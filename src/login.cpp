@@ -4,6 +4,7 @@
 #include <QTextStream>
 #include <QCryptographicHash>
 #include <QMessageBox>
+#include "register.h"
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
@@ -12,11 +13,14 @@ Login::Login(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->statusLabel->clear();
+
+    // Connect the register button to the showRegisterForm function
+    connect(ui->registerButton, &QPushButton::clicked, this, &Login::showRegisterForm);
 }
 
 Login::~Login()
 {
-    delete ui;
+    delete ui;  // Clean up the UI
 }
 
 bool Login::verifyCredentials(const QString &username, const QString &password) {
@@ -57,7 +61,7 @@ void Login::on_loginButton_clicked() {
         ui->usernameLineEdit->clear();
         ui->passwordLineEdit->clear();
 
-        emit loginSuccessful();
+        emit loginSuccessful();  // Emit the login successful signal
     } else {
         ui->statusLabel->setText("Invalid username or password.");
         ui->statusLabel->setStyleSheet("QLabel { color : red; font-weight: bold; }");
@@ -67,4 +71,9 @@ void Login::on_loginButton_clicked() {
             failedAttempts = 0;
         }
     }
+}
+
+void Login::showRegisterForm() {
+    RegisterForm *registerForm = new RegisterForm(this);
+    registerForm->show();
 }

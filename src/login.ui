@@ -46,7 +46,7 @@
       </size>
      </property>
      <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
+      <enum>QLineEdit::EchoMode::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Enter your password</string>
@@ -57,6 +57,13 @@
     <widget class="QPushButton" name="loginButton">
      <property name="text">
       <string>Login</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="registerButton"> <!-- Register Button Added -->
+     <property name="text">
+      <string>Register</string>
      </property>
     </widget>
    </item>

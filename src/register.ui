@@ -31,7 +31,7 @@
    <item>
     <widget class="QLineEdit" name="passwordLineEdit">
      <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
+      <enum>QLineEdit::EchoMode::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Enter your password</string>
@@ -41,7 +41,7 @@
    <item>
     <widget class="QLineEdit" name="confirmPasswordLineEdit">
      <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
+      <enum>QLineEdit::EchoMode::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Confirm your password</string>
@@ -60,4 +60,6 @@
    </item>
   </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

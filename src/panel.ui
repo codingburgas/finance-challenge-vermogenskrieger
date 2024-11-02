@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-<class>FinancePanel</class>
- <widget class="QWidget" name="Form">
+ <class>FinancePanel</class>
+ <widget class="QWidget" name="FinancePanel"> <!-- Updated here -->
   <property name="geometry">
    <rect>
     <x>0</x>

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <string>
+#include <QMap> // Include QMap for summary mapping
 #include "financemanager.h" // Include your finance manager header
 
 namespace Ui {

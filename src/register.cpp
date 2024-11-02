@@ -18,7 +18,7 @@ RegisterForm::~RegisterForm()
     delete ui;
 }
 
-// Validate the inputs: ensure password matches confirm password and is not empty
+// Validate inputs
 bool RegisterForm::validateInputs(const QString &username, const QString &password, const QString &confirmPassword)
 {
     if (username.isEmpty()) {
@@ -36,6 +36,26 @@ bool RegisterForm::validateInputs(const QString &username, const QString &passwo
     return true;
 }
 
+// Check if username already exists in the file
+bool RegisterForm::usernameExists(const QString &username) {
+    QFile file("users.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return false;  // Can't check if file is accessible
+    }
+
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList credentials = line.split(" ");
+        if (credentials.size() == 2 && credentials[0] == username) {
+            file.close();
+            return true;  // Username already exists
+        }
+    }
+    file.close();
+    return false;  // Username does not exist
+}
+
 // Handle the register button click
 void RegisterForm::on_registerButton_clicked()
 {
@@ -44,6 +64,12 @@ void RegisterForm::on_registerButton_clicked()
     QString confirmPassword = ui->confirmPasswordLineEdit->text();
 
     if (validateInputs(username, password, confirmPassword)) {
+        if (usernameExists(username)) {
+            ui->statusLabel->setText("Username already exists.");
+            ui->statusLabel->setStyleSheet("QLabel { color : red; font-weight: bold; }");
+            return;  // Username conflict
+        }
+
         // Hash the password for secure storage
         QByteArray hashedPassword = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256).toHex();
 

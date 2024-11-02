@@ -1,12 +1,17 @@
 #include <QApplication>
-#include "panel.h"  // Ensure you include the correct header file for your class
+#include "login.h"
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
-    // Create an instance of FinancePanel
-    FinancePanel financePanel;  // Corrected to match the class name
-    financePanel.show();         // Show the main window
+    // Create the login form
+    Login loginForm;
 
-    return app.exec();           // Start the application event loop
+    // Connect the login successful signal to quit the application (optional)
+    QObject::connect(&loginForm, &Login::loginSuccessful, &app, &QApplication::quit);
+
+    // Show the login form
+    loginForm.show();
+
+    return app.exec(); // Start the event loop
 }
