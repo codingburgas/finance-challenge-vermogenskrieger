@@ -1,111 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Login</class>
+ <widget class="QDialog" name="Login">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>500</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Login Screen</string>
+   <string>Login</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="welcomeLabel">
-        <property name="styleSheet">
-         <string notr="true">font-size: 20px; font-weight: bold; color: #333;</string>
-        </property>
-        <property name="text">
-         <string>Welcome back!</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="usernameLineEdit">
-        <property name="styleSheet">
-         <string notr="true">padding: 5px; font-size: 14px;</string>
-        </property>
-        <property name="placeholderText">
-         <string>Enter your username</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="passwordLineEdit">
-        <property name="styleSheet">
-         <string notr="true">padding: 5px; font-size: 14px;</string>
-        </property>
-        <property name="echoMode">
-         <enum>QLineEdit::EchoMode::Password</enum>
-        </property>
-        <property name="placeholderText">
-         <string>Enter your password</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="rememberMeCheckBox">
-        <property name="text">
-         <string>Remember me</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="loginButton">
-        <property name="styleSheet">
-         <string notr="true">background-color: #58b368; color: white; font-weight: bold; padding: 10px; font-size: 16px; border-radius: 5px;</string>
-        </property>
-        <property name="text">
-         <string>Login</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="statusLabel">
-        <property name="styleSheet">
-         <string notr="true">font-size: 14px;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QLabel" name="imageLabel">
-      <property name="pixmap">
-       <pixmap>:/images/meditation_image.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <action name="action1">
-   <property name="text">
-    <string>1</string>
-   </property>
-  </action>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="welcomeLabel">
+     <property name="text">
+      <string>Welcome back!</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 20px; font-weight: bold; color: #333;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="usernameLineEdit">
+     <property name="placeholderText">
+      <string>Enter your username</string>
+     </property>
+     <property name="styleSheet">
+      <string>padding: 5px; font-size: 14px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="passwordLineEdit">
+     <property name="placeholderText">
+      <string>Enter your password</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="styleSheet">
+      <string>padding: 5px; font-size: 14px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="rememberMeCheckBox">
+     <property name="text">
+      <string>Remember me</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="loginButton">
+     <property name="text">
+      <string>Login</string>
+     </property>
+     <property name="styleSheet">
+      <string>background-color: #58b368; color: white; font-weight: bold; padding: 10px; font-size: 16px; border-radius: 5px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="statusLabel">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string>font-size: 14px;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
