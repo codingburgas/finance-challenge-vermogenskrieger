@@ -13,6 +13,65 @@
   <property name="windowTitle">
    <string>Login</string>
   </property>
+  <property name="styleSheet">
+   <string>
+    QWidget {
+        background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                    stop:0 #B2FFB2, stop:1 #007A33); /* Light green to dark green gradient */
+        border-radius: 20px; /* Rounded corners for the main widget */
+        padding: 20px; /* Padding around the widget */
+    }
+    QLabel {
+        font-size: 26px; /* Larger font for labels */
+        font-weight: bold;
+        color: #ffffff; /* White text */
+        padding: 10px; /* Padding around labels */
+    }
+    QLineEdit {
+        border: 2px solid #ffffff; /* White border */
+        border-radius: 12px; /* Rounded corners */
+        padding: 12px; /* Padding inside the line edit */
+        background: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+        font-size: 16px; /* Larger font size */
+    }
+    QLineEdit:focus {
+        border: 2px solid #4CAF50; /* Green on focus */
+        background: rgba(255, 255, 255, 1); /* Full opacity on focus */
+        box-shadow: 0px 0px 5px rgba(0, 128, 0, 0.5); /* Subtle shadow effect on focus */
+    }
+    QPushButton {
+        background-color: #4CAF50; /* Button background color */
+        color: white; /* White text */
+        font-weight: bold;
+        border: none; /* No border */
+        border-radius: 12px; /* More rounded corners */
+        padding: 12px; /* Padding inside the button */
+        font-size: 18px; /* Larger font size */
+        height: 50px; /* Fixed height for uniform button sizes */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    }
+    QPushButton:pressed {
+        background-color: #2E7D32; /* Even darker green when pressed */
+    }
+    QPushButton#forgotButton {
+        color: #ffffff; /* Green color for the flat button */
+        text-decoration: underline; /* Underline for emphasis */
+        border: none; /* No border for flat button */
+        padding: 0; /* No padding */
+        height: 70px; /* Same height as login button */
+    }
+    QPushButton#forgotButton:hover {
+        text-decoration: none; /* Remove underline on hover */
+        color: #388E3C; /* Darker green on hover */
+    }
+    QLabel#statusLabel {
+        color: #ffffff; /* White text */
+        font-size: 16px; /* Medium font size */
+        font-weight: bold;
+        padding: 10px; /* Padding around status label */
+    }
+   </string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="loginLabel">
@@ -42,24 +101,35 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="loginButton">
-     <property name="text">
-      <string>Login</string>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="buttonLayout">
+     <item>
+      <widget class="QPushButton" name="loginButton">
+       <property name="text">
+        <string>Login</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="forgotButton">
+       <property name="text">
+        <string>Forgot username/password?</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
-    <widget class="QPushButton" name="forgotButton">
+    <widget class="QLabel" name="statusLabel">
      <property name="text">
-      <string>Forgot username/password?</string>
+      <string></string>
      </property>
-     <property name="flat">
-      <bool>true</bool>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="statusLabel"/>
    </item>
   </layout>
  </widget>

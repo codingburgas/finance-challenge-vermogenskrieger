@@ -10,10 +10,10 @@ RegisterForm::RegisterForm(QWidget *parent) :
     ui(new Ui::RegisterForm)
 {
     ui->setupUi(this);
-    ui->statusLabel->clear();
+    ui->statusLabel->clear();  // Make sure to initialize the status label
 
-    // Connect the login link button to emit the loginRequested signal
-    connect(ui->loginLinkButton, &QPushButton::clicked, this, &RegisterForm::loginRequested);
+    // Connect the already have an account button to emit the loginRequested signal
+    connect(ui->alreadyHaveAccountButton, &QPushButton::clicked, this, &RegisterForm::loginRequested);
 }
 
 RegisterForm::~RegisterForm() {

@@ -6,70 +6,167 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>488</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Register</string>
   </property>
+  <property name="styleSheet">
+   <string>
+    QWidget {
+        background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                    stop:0 #87CEFA, stop:1 #4682B4); /* Gradient background */
+        color: #333; /* Dark text */
+    }
+    QLabel {
+        font-size: 20px; /* Larger font for labels */
+        font-weight: bold;
+        color: #ffffff; /* White text */
+        padding: 10px; /* Padding around labels */
+    }
+    QLineEdit {
+        border: 2px solid #ffffff; /* White border */
+        border-radius: 8px; /* More rounded corners */
+        padding: 8px; /* Padding inside the line edit */
+        background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+    }
+    QLineEdit:focus {
+        border: 2px solid #1A73E8; /* Darker blue on focus */
+    }
+    QPushButton {
+        background-color: #4A90E2; /* Button background color */
+        color: white; /* White text */
+        font-weight: bold;
+        border: none; /* No border */
+        border-radius: 8px; /* More rounded corners */
+        padding: 12px; /* Padding inside the button */
+        font-size: 16px; /* Larger font size */
+    }
+    QPushButton:hover {
+        background-color: #357ABD; /* Darker blue on hover */
+    }
+    QLabel#statusLabel {
+        color: #ffffff; /* White text for status */
+        font-size: 16px; /* Medium font size */
+        font-weight: bold;
+        padding: 10px; /* Padding around status label */
+    }
+   </string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="welcomeLabel">
      <property name="text">
-      <string>Register</string>
+      <string>Welcome to Vermogenskrieger</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="usernameLineEdit">
-     <property name="placeholderText">
-      <string>Enter your username</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="passwordLineEdit">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Enter your password</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="confirmPasswordLineEdit">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Confirm your password</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="registerButton">
+    <widget class="QLabel" name="subLabel">
      <property name="text">
-      <string>Register</string>
+      <string>Manage your finances with ease</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="loginLinkButton">
-     <property name="text">
-      <string>Already have an account? Log in</string>
+    <widget class="QFrame" name="decorativeLine1">
+     <property name="frameShape">
+      <enum>QFrame::Shape::HLine</enum>
      </property>
-     <property name="flat">
-      <bool>true</bool>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Sunken</enum>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="statusLabel"/>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="registerTab">
+      <attribute name="title">
+       <string>Register</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="registerTabLayout">
+       <item>
+        <widget class="QLineEdit" name="usernameLineEdit">
+         <property name="placeholderText">
+          <string>Enter your username</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="passwordLineEdit">
+         <property name="echoMode">
+          <enum>QLineEdit::EchoMode::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Create a password</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="confirmPasswordLineEdit">
+         <property name="echoMode">
+          <enum>QLineEdit::EchoMode::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Confirm your password</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="registerButton">
+         <property name="text">
+          <string>Register</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="statusLabel">
+         <property name="text">
+          <string></string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="loginTab">
+      <attribute name="title">
+       <string>Already have an account?</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="loginTabLayout">
+       <item>
+        <widget class="QPushButton" name="alreadyHaveAccountButton">
+         <property name="text">
+          <string>Login Here</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="decorativeLine2">
+     <property name="frameShape">
+      <enum>QFrame::Shape::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Sunken</enum>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
