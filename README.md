@@ -28,7 +28,7 @@ This project uses C++ to simplify essential financial calculations, showing how 
 ## Documents
 
 ### 📄 Documentation
-[Documentation]
+[Documentation](./doc/Vermogenskrieger.docx)
 
 ### 🧑‍🏫 Presenting
 [Presentation](./doc/Vermogenskrieger.pptx)
@@ -47,9 +47,9 @@ This project uses C++ to simplify essential financial calculations, showing how 
 | Name                                                   | Role                | Class |
 |--------------------------------------------------------|---------------------|-------|
 | [Anton Kabakov](https://github.com/ATKabakov22)   | Front end Developer | 🟩10V   |
-| [Kalina Atanasova](https://github.com/kkatanasova22) | Front end Developer| 🟩10V   |
+| [Kalina Atanasova](https://github.com/kkatanasova22) | Designer| 🟩10V   |
 | [Kristiyana Hristova](https://github.com/KIHristova22)| Scrum Trainer | 🟩10V   |
-| [Rumen Purvanov](https://github.com/RVParvanov22) | Front end Developer  | 🟩10V   |
+| [Rumen Purvanov](https://github.com/RVParvanov22) | Back end Developer  | 🟩10V   |
 
 <hr>
 
