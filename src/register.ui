@@ -6,127 +6,58 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
-  <property name="styleSheet">
-   <string>
-      background-color: #f9f9f9; /* Soft background color */
-      border-radius: 10px; /* Rounded corners for the form */
-      padding: 20px; /* Add padding to the entire form */
-   </string>
+  <property name="windowTitle">
+   <string>Register</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="titleLabel">
-     <property name="styleSheet">
-      <string>
-         font-size: 24px; /* Larger title font */
-         font-weight: bold; /* Bold font for title */
-         color: #333; /* Darker text for contrast */
-         padding: 10px; /* Padding around the title */
-      </string>
-     </property>
-     <property name="text">
-      <string>Registration</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="usernameLineEdit">
-     <property name="styleSheet">
-      <string>
-         QLineEdit {
-            border: 1px solid #007BFF; /* Blue border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px; /* Padding inside the input */
-         }
-      </string>
-     </property>
-     <property name="placeholderText">
-      <string>Username</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="passwordLineEdit">
-     <property name="styleSheet">
-      <string>
-         QLineEdit {
-            border: 1px solid #007BFF; /* Blue border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px; /* Padding inside the input */
-         }
-      </string>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::Normal</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Password</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="confirmPasswordLineEdit">
-     <property name="styleSheet">
-      <string>
-         QLineEdit {
-            border: 1px solid #007BFF; /* Blue border */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px; /* Padding inside the input */
-         }
-      </string>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::Normal</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Confirm Password</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="registerButton">
-     <property name="styleSheet">
-      <string>
-         QPushButton {
-            background-color: #007BFF; /* Blue background */
-            color: white; /* White text */
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px; /* Padding for button */
-            font-weight: bold; /* Bold text */
-            font-size: 16px; /* Slightly larger font size */
-         }
-         QPushButton:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-         }
-      </string>
-     </property>
+    <widget class="QLabel" name="welcomeLabel">
      <property name="text">
       <string>Register</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="statusLabel">
-     <property name="styleSheet">
-      <string>
-         QLabel {
-            font-size: 14px; /* Font size for label */
-            padding: 10px; /* Padding for label */
-            color: #e74c3c; /* Error color */
-         }
-      </string>
-     </property>
-     <property name="text">
-      <string/>
+    <widget class="QLineEdit" name="usernameLineEdit">
+     <property name="placeholderText">
+      <string>Enter your username</string>
      </property>
     </widget>
    </item>
+   <item>
+    <widget class="QLineEdit" name="passwordLineEdit">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Enter your password</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="confirmPasswordLineEdit">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Confirm your password</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="registerButton">
+     <property name="text">
+      <string>Register</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="statusLabel"/>
+   </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
 </ui>

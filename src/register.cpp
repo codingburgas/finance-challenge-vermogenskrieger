@@ -1,12 +1,16 @@
 #include "register.h"
 #include "ui_register.h"
+#include <QFile>
+#include <QTextStream>
+#include <QCryptographicHash>
+#include <QMessageBox>
 
 RegisterForm::RegisterForm(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RegisterForm)
 {
     ui->setupUi(this);
-    ui->statusLabel->clear();  // Clear the status label at startup
+    ui->statusLabel->clear();
 }
 
 RegisterForm::~RegisterForm()
@@ -40,15 +44,28 @@ void RegisterForm::on_registerButton_clicked()
     QString confirmPassword = ui->confirmPasswordLineEdit->text();
 
     if (validateInputs(username, password, confirmPassword)) {
+        // Hash the password for secure storage
+        QByteArray hashedPassword = QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha256).toHex();
+
+        // Save the username and hashed password to a file
+        QFile file("users.txt");
+        if (file.open(QIODevice::Append | QIODevice::Text)) {
+            QTextStream out(&file);
+            out << username << " " << hashedPassword << "\n"; // Store username and hashed password
+            file.close();
+        } else {
+            QMessageBox::critical(this, "Error", "Unable to open user data file.");
+            return; // Exit if file can't be opened
+        }
+
         ui->statusLabel->setText("Registration successful!");
         ui->statusLabel->setStyleSheet("QLabel { color : green; font-weight: bold; }");
 
-        // Clear the input fields after successful registration
+        // Clear input fields
         ui->usernameLineEdit->clear();
         ui->passwordLineEdit->clear();
         ui->confirmPasswordLineEdit->clear();
 
-        // Emit signal to indicate successful registration
         emit registrationSuccessful(); // Emit the signal
     } else {
         ui->statusLabel->setStyleSheet("QLabel { color : red; font-weight: bold; }");
