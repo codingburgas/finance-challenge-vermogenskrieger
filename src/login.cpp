@@ -5,15 +5,15 @@
 // Constructor for the Login class
 Login::Login(QWidget *parent) :
     QWidget(parent),          // Call the parent constructor
-    ui(new Ui::Login),       // Initialize the UI pointer
-    failedAttempts(0)        // Initialize failed attempts counter
+    ui(new Ui::Login),        // Initialize the UI pointer
+    failedAttempts(0)         // Initialize failed attempts counter
 {
-    ui->setupUi(this);       // Setup the UI components from the .ui file
+    ui->setupUi(this);        // Setup the UI components from the .ui file
 
     if (ui->statusLabel) {
         ui->statusLabel->clear(); // Clear the status label on startup
     }
-
+    ui->usernameLineEdit->setPlaceholderText("Enter your username");
     // Connect the login button's click signal to the on_loginButton_clicked slot
     connect(ui->loginButton, &QPushButton::clicked, this, &Login::on_loginButton_clicked);
 }

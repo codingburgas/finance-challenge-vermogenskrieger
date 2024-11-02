@@ -36,7 +36,7 @@
          <string notr="true">padding: 5px; font-size: 14px;</string>
         </property>
         <property name="placeholderText">
-         <string>Enter your email</string>
+         <string>Enter your username</string>
         </property>
        </widget>
       </item>

@@ -18,15 +18,15 @@ RegisterForm::~RegisterForm()
 bool RegisterForm::validateInputs(const QString &username, const QString &password, const QString &confirmPassword)
 {
     if (username.isEmpty()) {
-        ui->statusLabel->setText("Потребителското име е задължително."); // "Username is required."
+        ui->statusLabel->setText("Username is required.");
         return false;
     }
     if (password.isEmpty()) {
-        ui->statusLabel->setText("Паролата е задължителна."); // "Password is required."
+        ui->statusLabel->setText("Password is required.");
         return false;
     }
     if (password != confirmPassword) {
-        ui->statusLabel->setText("Паролите не съвпадат."); // "Passwords do not match."
+        ui->statusLabel->setText("Passwords do not match.");
         return false;
     }
     return true;
@@ -40,7 +40,7 @@ void RegisterForm::on_registerButton_clicked()
     QString confirmPassword = ui->confirmPasswordLineEdit->text();
 
     if (validateInputs(username, password, confirmPassword)) {
-        ui->statusLabel->setText("Регистрацията е успешна!"); // "Registration successful!"
+        ui->statusLabel->setText("Registration successful!");
         ui->statusLabel->setStyleSheet("QLabel { color : green; font-weight: bold; }");
 
         // Clear the input fields after successful registration
