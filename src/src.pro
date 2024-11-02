@@ -13,17 +13,20 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    panel.cpp \
     register.cpp
 
 HEADERS += \
     financemanager.h \
     login.h \
     mainwindow.h \
+    panel.h \
     register.h
 
 FORMS += \
     login.ui \
     mainwindow.ui \
+    panel.ui \
     register.ui
 
 # Default rules for deployment.

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1248</width>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,6 +23,15 @@
    </item>
    <item>
     <widget class="QLineEdit" name="usernameLineEdit">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>500</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="placeholderText">
       <string>Enter your username</string>
      </property>
@@ -30,6 +39,12 @@
    </item>
    <item>
     <widget class="QLineEdit" name="passwordLineEdit">
+     <property name="maximumSize">
+      <size>
+       <width>500</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>
@@ -50,4 +65,6 @@
    </item>
   </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

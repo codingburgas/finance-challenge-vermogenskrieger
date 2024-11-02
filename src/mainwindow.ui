@@ -16,6 +16,9 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <widget class="QStackedWidget" name="stackedWidget"/>
+    </item>
+    <item>
      <widget class="QPushButton" name="loginButton">
       <property name="text">
        <string>Login</string>
@@ -29,11 +32,10 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QStackedWidget" name="stackedWidget"/>
-    </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <resources/>
+ <connections/>
 </ui>
