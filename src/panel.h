@@ -2,12 +2,11 @@
 #define PANEL_H
 
 #include <QWidget>
-#include <string>
-#include <QMap> // Include QMap for summary mapping
-#include "financemanager.h" // Include your finance manager header
+#include <QMessageBox>
+#include "financemanager.h"
 
 namespace Ui {
-class FinancePanel; // Class name updated to match your UI class
+class FinancePanel;
 }
 
 class FinancePanel : public QWidget {
@@ -24,14 +23,16 @@ private slots:
     void on_generateReportButton_clicked();
 
 private:
+    void initializeCategoryComboBox();
     void updateTotalIncome();
     void updateTotalExpense();
     void updateUtilizationAndRemaining();
     void updateNetIncome();
     void updateCategorySummary();
 
-    Ui::FinancePanel *ui; // Updated to match your UI class
-    FinanceManager financeManager; // Assuming you have a finance manager class
+    Ui::FinancePanel *ui;
+    FinanceManager financeManager; // Add your finance manager instance here
 };
 
 #endif // PANEL_H
+
