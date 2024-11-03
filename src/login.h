@@ -14,6 +14,7 @@ class Login : public QWidget
 public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
+    QString exportCorrectUsersName() const;
 
 private slots:
     void on_loginButton_clicked();
@@ -27,6 +28,7 @@ private:
     Ui::Login *ui;
     bool verifyCredentials(const QString &username, const QString &password);
     int failedAttempts;
+    QString correctUsersName;
 };
 
 #endif // LOGIN_H

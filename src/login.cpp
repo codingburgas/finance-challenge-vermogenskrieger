@@ -39,11 +39,17 @@ bool Login::verifyCredentials(const QString &username, const QString &password) 
             QString storedPasswordHash = credentials[1];
 
             if (storedUsername == username && storedPasswordHash == hashedPassword) {
+                correctUsersName= username;
                 return true;
             }
         }
     }
     return false;
+}
+
+QString Login::exportCorrectUsersName() const{
+    qDebug() << "successfuly export" << correctUsersName;
+    return correctUsersName;
 }
 
 void Login::on_loginButton_clicked() {

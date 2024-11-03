@@ -20,6 +20,7 @@ signals:
 
 private slots:
     void on_registerButton_clicked();
+    void createUserFile(const QString &username);
 
 private:
     Ui::RegisterForm *ui;

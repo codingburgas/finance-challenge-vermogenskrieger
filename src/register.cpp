@@ -57,7 +57,19 @@ bool RegisterForm::usernameExists(const QString &username) {
     return false;  // Username does not exist
 }
 
-// Handle the register button click
+// Function to create a new text file with the user's name
+void RegisterForm::createUserFile(const QString &username) {
+    QString filename = username + ".txt"; // Create a filename based on the username
+    QFile file(filename);
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&file);
+        file.close();
+    } else {
+        QMessageBox::warning(this, "Warning", "Unable to create user file: " + filename);
+    }
+}
+
+// Modify the handle the register button click function
 void RegisterForm::on_registerButton_clicked()
 {
     QString username = ui->usernameLineEdit->text();
@@ -85,6 +97,9 @@ void RegisterForm::on_registerButton_clicked()
             return; // Exit if file can't be opened
         }
 
+        // Call the function to create a user file
+        createUserFile(username);
+
         ui->statusLabel->setText("Registration successful!");
         ui->statusLabel->setStyleSheet("QLabel { color : green; font-weight: bold; }");
 
@@ -98,3 +113,4 @@ void RegisterForm::on_registerButton_clicked()
         ui->statusLabel->setStyleSheet("QLabel { color : red; font-weight: bold; }");
     }
 }
+
