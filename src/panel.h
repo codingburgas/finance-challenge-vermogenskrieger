@@ -1,51 +1,40 @@
-#pragma once
+#ifndef PANEL_H
+#define PANEL_H
 
-#include "financemanager.h" // Include the finance manager class header
-
-#include <QWidget> // Base class for all UI objects in Qt
-#include <QMessageBox> // Include QMessageBox for showing messages to the user
-#include <QMap> // Include QMap for mapping summary data
-#include <QString> // Include QString for text handling
-#include <QtCharts/QChartView> // Include for displaying charts
-#include <QtCharts/QPieSeries> // Include for pie chart series
-#include <QtCharts/QBarSet> // Include for bar sets in bar charts
-#include <QtCharts/QBarSeries> // Include for bar series
-#include <QtCharts/QCategoryAxis> // Include for category axis in charts
-#include <QtCharts/QValueAxis> // Include for value axis in charts
+#include <QWidget>
+#include <QMessageBox>
+#include <string>
+#include <QMap> // Include QMap for summary mapping
+#include "financemanager.h" // Include your finance manager header
+#include <QString>
 
 namespace Ui {
-class FinancePanel; // Forward declaration of the UI class associated with this panel
+class FinancePanel; // Class name updated to match your UI class
 }
 
-// FinancePanel class handles the finance functionalities
 class FinancePanel : public QWidget {
-    Q_OBJECT // Enable Qt's signal and slot mechanism
+    Q_OBJECT
 
 public:
-    explicit FinancePanel(QWidget *parent = nullptr); // Constructor
-    ~FinancePanel(); // Destructor
+    explicit FinancePanel(QWidget *parent = nullptr);
+    ~FinancePanel();
 
 private slots:
-    QString getFile(); // Retrieve the content of a file
-    void addIncomeButtonClicked(); // Slot for adding income
-    void addExpenseButtonClicked(); // Slot for adding expense
-    void setBudgetButtonClicked(); // Slot for setting a budget
-    void generateReportButtonClicked(); // Slot for generating a report
+    QString getFile();
+    void on_addIncomeButton_clicked();
+    void on_addExpenseButton_clicked();
+    void on_setBudgetButton_clicked();
+    void on_generateReportButton_clicked();
 
 private:
-    void updateTotalIncome(); // Update displayed total income
-    void updateTotalExpense(); // Update displayed total expense
-    void updateUtilizationAndRemaining(); // Update budget utilization and remaining amount
-    void updateNetIncome(); // Update net income display
-    void updateCategorySummary(); // Update summary of categories
+    void updateTotalIncome();
+    void updateTotalExpense();
+    void updateUtilizationAndRemaining();
+    void updateNetIncome();
+    void updateCategorySummary();
 
-    Ui::FinancePanel *ui; // Pointer to the UI elements defined in the associated .ui file
-    FinanceManager financeManager; // Instance of the finance manager class for managing finances
-
-    QChartView* createExpensePieChart() const; // Create and return an expense pie chart
-    QChartView* createExpenseBarChart() const; // Create and return an expense bar chart
-
-    // Pointers to hold the chart views for expenses
-    QChartView *pieChartView; // Pie chart view for displaying expense distribution
-    QChartView *barChartView; // Bar chart view for displaying expenses by category
+    Ui::FinancePanel *ui; // Updated to match your UI class
+    FinanceManager financeManager; // Assuming you have a finance manager class
 };
+
+#endif // PANEL_H

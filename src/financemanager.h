@@ -5,11 +5,6 @@
 #include <vector>
 #include <map>
 
-struct Expense {
-    std::string category;
-    double amount; // Use double for the amount
-};
-
 class FinanceManager {
 public:
     void addIncome(const std::string& date, const std::string& category, double amount);
@@ -28,15 +23,6 @@ public:
     std::map<std::string, double> getCategorySummary(const std::string& category) const;
     std::map<std::string, double> getCategoryPercentage() const;
     double getAverageMonthlyExpense(const std::string& category, int monthsTracked) const;
-
-    std::vector<Expense> getExpenses() const {
-        // Sample implementation
-        return {
-            {"Food", 100.0},
-            {"Transport", 50.0},
-            {"Entertainment", 150.0}
-        };
-    }
 
 private:
     struct Transaction {
