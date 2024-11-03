@@ -1,5 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
+#include "filecontrol.h"
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
@@ -39,17 +40,14 @@ bool Login::verifyCredentials(const QString &username, const QString &password) 
             QString storedPasswordHash = credentials[1];
 
             if (storedUsername == username && storedPasswordHash == hashedPassword) {
-                correctUsersName = username;
+                filecontrol fl;
+                fl.writeFile("temp.txt",username+".txt");
+
                 return true;
             }
         }
     }
     return false;
-}
-
-QString Login::exportCorrectUsersName() const {
-    qDebug() << "Successfully exported" << correctUsersName;
-    return correctUsersName;
 }
 
 void Login::on_loginButton_clicked() {

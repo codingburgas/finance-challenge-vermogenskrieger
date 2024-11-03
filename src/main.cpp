@@ -6,11 +6,7 @@ int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     MainWindow w;
 
-    #ifdef Q_OS_WINDOWS
-        QIcon appIcon("C:/Users/anton/source/repos/finance-challenge-vermogenskrieger/src/images/fullLogo.ico");
-    #else
-       QIcon appIcon("images/fullLogo.ico");
-    #endif
+    QIcon appIcon("fullLogo.ico");
 
     a.setWindowIcon(appIcon);
     QSystemTrayIcon trayIcon;

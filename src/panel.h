@@ -6,6 +6,7 @@
 #include <string>
 #include <QMap> // Include QMap for summary mapping
 #include "financemanager.h" // Include your finance manager header
+#include <QString>
 
 namespace Ui {
 class FinancePanel; // Class name updated to match your UI class
@@ -19,6 +20,7 @@ public:
     ~FinancePanel();
 
 private slots:
+    QString getFile();
     void on_addIncomeButton_clicked();
     void on_addExpenseButton_clicked();
     void on_setBudgetButton_clicked();

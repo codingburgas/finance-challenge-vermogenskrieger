@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "filecontrol.h"
 #include "ui_MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -32,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() {
     delete ui;
+    filecontrol fl;
+    fl.eraseFile("temp.txt");
 }
 
 void MainWindow::showLogin() {

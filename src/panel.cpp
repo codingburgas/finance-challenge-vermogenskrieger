@@ -1,21 +1,30 @@
 #include "panel.h"
 #include "ui_panel.h"
-#include "login.h"
+#include "filecontrol.h"
 #include <QDebug>
 #include <QString>
-
 
 FinancePanel::FinancePanel(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FinancePanel) {
     ui->setupUi(this);
-    Login l;
-
-    QString file = l.exportCorrectUsersName();
 }
 
 FinancePanel::~FinancePanel() {
     delete ui;
+}
+
+QString FinancePanel::getFile(){
+    filecontrol fl;
+
+    QString file = fl.readFile("temp.txt");
+
+    while(file.isEmpty()){
+        file = fl.readFile("temp.txt");
+    }
+    qDebug() << "the file is "<< file;
+
+    return file;
 }
 
 // Slot for adding income
@@ -50,6 +59,8 @@ void FinancePanel::on_addIncomeButton_clicked() {
     ui->incomeDateLineEdit->clear();
     ui->incomeCategoryLineEdit->clear();
     ui->incomeAmountLineEdit->clear();
+
+    getFile();
 }
 
 // Slot for adding expense
