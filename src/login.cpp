@@ -2,9 +2,7 @@
 #include "ui_login.h"
 #include "filecontrol.h"
 #include <QMessageBox>
-#include <QFile>
-#include <QTextStream>
-#include <QCryptographicHash>
+
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
@@ -15,7 +13,7 @@ Login::Login(QWidget *parent) :
     ui->statusLabel->clear();
 
     // Connect the forgot password button to its slot
-    connect(ui->forgotButton, &QPushButton::clicked, this, &Login::on_forgotButton_clicked);
+    connect(ui->forgotButton, &QPushButton::clicked, this, &Login::forgotButtonClicked);
 }
 
 Login::~Login() {
@@ -50,7 +48,7 @@ bool Login::verifyCredentials(const QString &username, const QString &password) 
     return false;
 }
 
-void Login::on_loginButton_clicked() {
+void Login::loginButtonClicked() {
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
 
@@ -76,6 +74,6 @@ void Login::on_loginButton_clicked() {
     }
 }
 
-void Login::on_forgotButton_clicked() {
+void Login::forgotButtonClicked() {
     emit showRegisterRequested(); // Emit signal to request the register page
 }

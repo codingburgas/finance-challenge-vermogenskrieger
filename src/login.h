@@ -1,33 +1,32 @@
-#ifndef LOGIN_H
-#define LOGIN_H
+#pragma once
 
-#include <QWidget>
+#include <QWidget> // Base class for all UI objects in Qt
+#include <QFile>
+#include <QTextStream>
+#include <QCryptographicHash>
 
 namespace Ui {
-class Login;
+class Login; // Forward declaration of the UI class associated with this login widget
 }
 
-class Login : public QWidget
-{
-    Q_OBJECT
+// Login class handles user authentication
+class Login : public QWidget {
+    Q_OBJECT // Enable Qt's signal and slot mechanism
 
 public:
-    explicit Login(QWidget *parent = nullptr);
-    ~Login();
+    explicit Login(QWidget *parent = nullptr); // Constructor, initializes the login widget
+    ~Login(); // Destructor, cleans up resources
 
 private slots:
-    void on_loginButton_clicked();
-    void on_forgotButton_clicked(); // Slot for forgot password button
+    void loginButtonClicked(); // Slot for handling login button clicks
+    void forgotButtonClicked(); // Slot for handling forgot password button clicks
 
 signals:
-    void loginSuccessful();
-    void showRegisterRequested(); // Signal to request showing the register page
-    void onLoginSuccessful();
+    void loginSuccessful(); // Signal emitted when login is successful
+    void showRegisterRequested(); // Signal emitted to request displaying the registration page
 
 private:
-    Ui::Login *ui;
-    bool verifyCredentials(const QString &username, const QString &password);
-    int failedAttempts;
+    Ui::Login *ui; // Pointer to the UI elements defined in the associated .ui file
+    bool verifyCredentials(const QString &username, const QString &password); // Method to verify user credentials
+    int failedAttempts; // Counter for tracking the number of failed login attempts
 };
-
-#endif // LOGIN_H

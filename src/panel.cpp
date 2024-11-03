@@ -1,14 +1,6 @@
 #include "panel.h"
 #include "ui_panel.h"
 #include "filecontrol.h"
-#include <QDebug>
-#include <QString>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QChart>
-#include <QtCharts/QChartView>
-#include <QtCharts/QCategoryAxis>
-
 
 FinancePanel::FinancePanel(QWidget *parent) :
     QWidget(parent),
@@ -34,7 +26,7 @@ QString FinancePanel::getFile(){
 }
 
 // Slot for adding income
-void FinancePanel::on_addIncomeButton_clicked() {
+void FinancePanel::addIncomeButtonClicked() {
     QString date = ui->incomeDateLineEdit->text().trimmed();
     QString category = ui->incomeCategoryLineEdit->text().trimmed();
     bool ok;
@@ -68,7 +60,7 @@ void FinancePanel::on_addIncomeButton_clicked() {
 }
 
 // Slot for adding expense
-void FinancePanel::on_addExpenseButton_clicked() {
+void FinancePanel::addExpenseButtonClicked() {
     QString date = ui->expenseDateLineEdit->text().trimmed();
     QString category = ui->expenseCategoryLineEdit->text().trimmed();
     bool ok;
@@ -101,7 +93,7 @@ void FinancePanel::on_addExpenseButton_clicked() {
 }
 
 // Slot for setting the budget
-void FinancePanel::on_setBudgetButton_clicked() {
+void FinancePanel::setBudgetButtonClicked() {
     QString category = ui->budgetCategoryLineEdit->text().trimmed();
     bool ok;
     double amount = ui->budgetAmountLineEdit->text().toDouble(&ok);
@@ -124,7 +116,7 @@ void FinancePanel::on_setBudgetButton_clicked() {
 }
 
 // Slot for generating a report
-void FinancePanel::on_generateReportButton_clicked() {
+void FinancePanel::generateReportButtonClicked() {
     updateNetIncome();
     updateCategorySummary();
 }
