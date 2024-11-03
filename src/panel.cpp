@@ -3,6 +3,12 @@
 #include "filecontrol.h"
 #include <QDebug>
 #include <QString>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QChart>
+#include <QtCharts/QChartView>
+#include <QtCharts/QCategoryAxis>
+
 
 FinancePanel::FinancePanel(QWidget *parent) :
     QWidget(parent),
@@ -59,8 +65,6 @@ void FinancePanel::on_addIncomeButton_clicked() {
     ui->incomeDateLineEdit->clear();
     ui->incomeCategoryLineEdit->clear();
     ui->incomeAmountLineEdit->clear();
-
-    getFile();
 }
 
 // Slot for adding expense
@@ -171,4 +175,50 @@ void FinancePanel::updateCategorySummary() {
     // Debug output to check category summary
     qDebug() << "Category Summary - Category:" << category << summaryText;
 }
+#include <QtCharts/QCategoryAxis> // Ensure correct include
+
+
+QChartView* FinancePanel::createExpenseBarChart() const {
+    QBarSet *set = new QBarSet("Разходи");
+
+    // Summarize expenses by category
+    std::map<std::string, double> categoryExpenses;
+    for (const auto& expense : financeManager.getExpenses()) {
+        categoryExpenses[expense.category] += expense.amount;
+    }
+
+    if (categoryExpenses.empty()) {
+        qDebug() << "No expenses available for bar chart.";
+        return nullptr; // Handle as needed
+    }
+
+    // Add data to the bar set
+    for (const auto& it : categoryExpenses) {
+        *set << it.second;
+    }
+
+    QBarSeries *series = new QBarSeries();
+    series->append(set);
+
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("Разходи по категории (Бар диаграма)");
+    chart->setAnimationOptions(QChart::SeriesAnimations);
+
+    // Setup custom axes
+    QStringList categories;
+    for (const auto& it : categoryExpenses) {
+        categories << QString::fromStdString(it.first);
+    }
+
+    QCategoryAxis *axisX = new QCategoryAxis();
+    chart->setAxisX(axisX, series);
+    chart->setAxisX(axisX, series); // Set axis with series
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    return chartView;
+}
+
+
 

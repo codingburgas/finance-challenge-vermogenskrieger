@@ -7,6 +7,13 @@
 #include <QMap> // Include QMap for summary mapping
 #include "financemanager.h" // Include your finance manager header
 #include <QString>
+#include <QtCharts/QChartView>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QCategoryAxis>
+#include <QtCharts/QValueAxis>
+
 
 namespace Ui {
 class FinancePanel; // Class name updated to match your UI class
@@ -35,6 +42,13 @@ private:
 
     Ui::FinancePanel *ui; // Updated to match your UI class
     FinanceManager financeManager; // Assuming you have a finance manager class
+
+    QChartView* createExpensePieChart() const;
+    QChartView* createExpenseBarChart() const;
+
+    // UI to hold the charts
+    QChartView *pieChartView;
+    QChartView *barChartView;
 };
 
 #endif // PANEL_H

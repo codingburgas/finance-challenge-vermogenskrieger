@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>500</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -184,6 +184,28 @@
      <property name="text">
       <string>Category Summary: </string>
      </property>
+    </widget>
+   </item>
+
+   <!-- Chart Section -->
+   <item>
+    <widget class="QWidget" name="chartContainer">
+     <layout class="QVBoxLayout" name="chartLayout">
+      <item>
+       <widget class="QChartView" name="pieChartView">
+        <property name="minimumHeight">
+         <number>200</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QChartView" name="barChartView">
+        <property name="minimumHeight">
+         <number>200</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
