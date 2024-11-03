@@ -4,6 +4,10 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include <QDebug>
 
 class FinanceManager {
 public:
@@ -23,6 +27,8 @@ public:
     std::map<std::string, double> getCategorySummary(const std::string& category) const;
     std::map<std::string, double> getCategoryPercentage() const;
     double getAverageMonthlyExpense(const std::string& category, int monthsTracked) const;
+
+    void saveDataButtonClicked(QString filename);
 
 private:
     struct Transaction {

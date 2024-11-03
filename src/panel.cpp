@@ -172,3 +172,5 @@ void FinancePanel::updateCategorySummary() {
     qDebug() << "Category Summary - Category:" << category << summaryText;
 }
 
+
+
