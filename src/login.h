@@ -23,6 +23,7 @@ private slots:
 signals:
     void loginSuccessful();
     void showRegisterRequested(); // Signal to request showing the register page
+    void onLoginSuccessful();
 
 private:
     Ui::Login *ui;

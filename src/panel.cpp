@@ -1,11 +1,17 @@
 #include "panel.h"
 #include "ui_panel.h"
+#include "login.h"
 #include <QDebug>
+#include <QString>
+
 
 FinancePanel::FinancePanel(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FinancePanel) {
     ui->setupUi(this);
+    Login l;
+
+    QString file = l.exportCorrectUsersName();
 }
 
 FinancePanel::~FinancePanel() {
@@ -154,3 +160,4 @@ void FinancePanel::updateCategorySummary() {
     // Debug output to check category summary
     qDebug() << "Category Summary - Category:" << category << summaryText;
 }
+

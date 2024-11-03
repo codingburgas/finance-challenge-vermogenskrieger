@@ -39,7 +39,7 @@ bool Login::verifyCredentials(const QString &username, const QString &password) 
             QString storedPasswordHash = credentials[1];
 
             if (storedUsername == username && storedPasswordHash == hashedPassword) {
-                correctUsersName= username;
+                correctUsersName = username;
                 return true;
             }
         }
@@ -47,14 +47,17 @@ bool Login::verifyCredentials(const QString &username, const QString &password) 
     return false;
 }
 
-QString Login::exportCorrectUsersName() const{
-    qDebug() << "successfuly export" << correctUsersName;
+QString Login::exportCorrectUsersName() const {
+    qDebug() << "Successfully exported" << correctUsersName;
     return correctUsersName;
 }
 
 void Login::on_loginButton_clicked() {
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
+
+    ui->statusLabel->setText("Logging in..."); // Feedback message
+    ui->statusLabel->setStyleSheet("QLabel { color : blue; font-weight: bold; }");
 
     if (verifyCredentials(username, password)) {
         ui->statusLabel->setText("Login successful!");
