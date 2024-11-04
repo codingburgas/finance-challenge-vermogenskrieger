@@ -14,6 +14,10 @@ RegisterForm::RegisterForm(QWidget *parent) :
 
     // Connect the already have an account button to emit the loginRequested signal
     connect(ui->alreadyHaveAccountButton, &QPushButton::clicked, this, &RegisterForm::loginRequested);
+
+        ui->tabWidget->setStyleSheet("QTabBar::tab { background: blue; color: white; }"
+                             "QTabBar::tab:selected { background: blue; color: white; }"
+                             "QTabBar::tab:hover { background: #D3D3D3; }");
 }
 
 RegisterForm::~RegisterForm() {
