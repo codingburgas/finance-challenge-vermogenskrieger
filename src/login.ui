@@ -33,11 +33,15 @@
         padding: 12px; /* Padding inside the line edit */
         background: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
         font-size: 16px; /* Larger font size */
+        color: black; /* Black text color for normal text */
     }
     QLineEdit:focus {
         border: 2px solid #4CAF50; /* Green on focus */
         background: rgba(255, 255, 255, 1); /* Full opacity on focus */
         box-shadow: 0px 0px 5px rgba(0, 128, 0, 0.5); /* Subtle shadow effect on focus */
+    }
+    QLineEdit[placeholderText="true"] {
+        color: black; /* Set placeholder text to black */
     }
     QPushButton {
         background-color: #4CAF50; /* Button background color */
